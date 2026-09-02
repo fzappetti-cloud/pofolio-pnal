@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Franco Zappetti | Automatizaci&oacute;n &amp; Servicios de IA para PyMEs</title>
   
-  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior - Sin Overlaps) -->
+  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior + Demo Interactiva) -->
   <style>
     /* ==========================================================================
        1. VARIABLES Y CONFIGURACI&Oacute;N BASE (Tema Oscuro Tech High-Contrast)
@@ -129,6 +129,11 @@
       color: var(--text-muted);
       max-width: 780px;
       margin-bottom: 36px;
+    }
+
+    .inline-icon {
+      margin-right: 8px;
+      font-style: normal;
     }
 
     /* Botones */
@@ -259,18 +264,11 @@
     }
 
     .hero-sentences p {
-      position: relative;
-      padding-left: 0;
       line-height: 1.65;
     }
 
-    .inline-icon {
-      margin-right: 8px;
-      font-style: normal;
-    }
-
     /* ==========================================================================
-       5. SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO (3 VI&Ntilde;ETAS CADA UNO)
+       5. SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO
        ========================================================================== */
     .grid-2 {
       display: grid;
@@ -328,57 +326,31 @@
     }
 
     /* ==========================================================================
-       6. SECCI&Oacute;N 3: DEMO (ANTES Y DESPU&Eacute;S)
+       6. SECCI&Oacute;N 3: DEMO INTERACTIVA (CONSULTORIO / COMERCIO)
        ========================================================================== */
-    .demo-container {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-
-    .before-after-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .demo-card {
-      padding: 28px;
+    .demo-phrase-box {
+      padding: 20px 24px;
       border-radius: var(--radius-md);
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-card);
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 28px;
     }
 
-    .demo-card.before {
+    .demo-phrase-box.before {
       background: var(--accent-red-bg);
-      border-color: rgba(239, 68, 68, 0.25);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
     }
 
-    .demo-card.after {
+    .demo-phrase-box.after {
       background: var(--accent-green-bg);
-      border-color: rgba(16, 185, 129, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
+      margin-top: 28px;
     }
 
-    .demo-card ul {
-      list-style: disc;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .demo-card ul li {
-      font-size: 0.98rem;
-      color: var(--text-main);
-      line-height: 1.5;
-    }
-
-    /* Mockup Visual Interactivo de WhatsApp / Demo */
-    .mockup-frame {
-      width: 100%;
+    /* Contenedor Interactivo del Simulador */
+    .simulator-card {
       background: var(--bg-card);
       border: 1px solid var(--border-accent);
       border-radius: var(--radius-lg);
@@ -386,62 +358,91 @@
       box-shadow: var(--shadow-glow);
     }
 
-    .mockup-header {
+    .simulator-header {
       background: rgba(19, 27, 46, 0.95);
-      padding: 16px 24px;
+      padding: 18px 24px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
     }
 
-    .mockup-avatar {
-      width: 40px;
-      height: 40px;
-      background: var(--brand-gradient);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .mockup-info {
-      text-align: left;
-    }
-
-    .mockup-title {
-      font-size: 0.95rem;
+    .simulator-title {
+      font-size: 1rem;
       font-weight: 700;
       color: var(--text-highlight);
-    }
-
-    .mockup-status {
-      font-size: 0.8rem;
-      color: var(--accent-green);
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 10px;
     }
 
-    .mockup-body {
-      padding: 32px 24px;
+    .simulator-body {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+    }
+
+    .simulator-controls {
+      padding: 28px;
+      border-right: 1px solid var(--border-color);
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: #0b121e;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--brand-primary);
+    }
+
+    .simulator-chat {
+      padding: 28px;
+      background: #0b121e;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      background: #0b121e;
-      min-height: 280px;
+      min-height: 380px;
+      max-height: 480px;
+      overflow-y: auto;
     }
 
-    .chat-bubble {
-      max-width: 80%;
+    .chat-msg {
+      max-width: 85%;
       padding: 14px 18px;
       border-radius: 14px;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       line-height: 1.5;
+      animation: fadeIn 0.3s ease;
     }
 
-    .chat-bubble.bot {
+    .chat-msg.user {
+      background: #2563eb;
+      color: #ffffff;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-msg.bot {
       background: #1e293b;
       color: var(--text-main);
       align-self: flex-start;
@@ -449,24 +450,19 @@
       border: 1px solid var(--border-color);
     }
 
-    .chat-bubble.user {
-      background: #2563eb;
-      color: #ffffff;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
+    .pdf-preview-box {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px dashed var(--accent-green);
+      font-size: 0.85rem;
+      color: var(--accent-green);
     }
 
-    .chat-pdf-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-green);
-      padding: 8px 12px;
-      border-radius: 8px;
-      margin-top: 8px;
-      font-weight: 600;
-      font-size: 0.88rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ==========================================================================
@@ -618,17 +614,18 @@
       .section-title {
         font-size: 1.8rem;
       }
-      .grid-2, .before-after-grid, .steps-grid {
+      .grid-2, .steps-grid, .simulator-body {
         grid-template-columns: 1fr;
+      }
+      .simulator-controls {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
       }
       .nav-links {
         display: none;
       }
       .cta-card {
         padding: 40px 24px;
-      }
-      .chat-bubble {
-        max-width: 90%;
       }
     }
   </style>
@@ -642,7 +639,7 @@
       <ul class="nav-links">
         <li><a href="#ofrezco">Qu&eacute; ofrezco</a></li>
         <li><a href="#para-quien">Para qui&eacute;n</a></li>
-        <li><a href="#demo">Demo</a></li>
+        <li><a href="#demo">Demo Interactiva</a></li>
         <li><a href="#como-trabajo">C&oacute;mo trabajo</a></li>
         <li><a href="#faq">Preguntas</a></li>
       </ul>
@@ -651,7 +648,7 @@
   </header>
 
   <main>
-    <!-- SECCI&Oacute;N 1: QUI&Eacute;N SOY Y QU&Eacute; OFREZCO -->
+    <!-- SECCI&Oacute;N 1: QUI&Eacute;N SOY Y QU&Eacute; OFREZCO (HERO) -->
     <section id="ofrezco" class="hero-section">
       <div class="container hero-content">
         <div class="status-pill">
@@ -677,14 +674,14 @@
       </div>
     </section>
 
-    <!-- SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO (3 VI&Ntilde;ETAS CADA UNO) -->
+    <!-- SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO -->
     <section id="para-quien">
       <div class="container">
         <h2 class="section-title">&iquest;Esta soluci&oacute;n es para tu negocio?</h2>
         <p class="section-subtitle">Filtramos de entrada para trabajar exclusivamente con negocios donde generamos un impacto inmediato.</p>
 
         <div class="grid-2">
-          <!-- Tarjeta Para Qui&eacute;n S&Iacute; (3 vi&ntilde;etas) -->
+          <!-- Tarjeta Para Qui&eacute;n S&Iacute; -->
           <div class="card-target yes">
             <h3 class="target-title" style="color: var(--accent-green);">
               Para qui&eacute;n S&Iacute;
@@ -696,7 +693,7 @@
             </ul>
           </div>
 
-          <!-- Tarjeta Para Qui&eacute;n NO (3 vi&ntilde;etas) -->
+          <!-- Tarjeta Para Qui&eacute;n NO -->
           <div class="card-target no">
             <h3 class="target-title" style="color: var(--accent-red);">
               Para qui&eacute;n NO
@@ -715,61 +712,82 @@
       </div>
     </section>
 
-    <!-- SECCI&Oacute;N 3: DEMO (ANTES Y DESPU&Eacute;S + MOCKUP VISUAL INTERACTIVO) -->
+    <!-- SECCI&Oacute;N 3: DEMO INTERACTIVA (CONSULTORIO / COMERCIO) -->
     <section id="demo">
       <div class="container">
-        <h2 class="section-title">El cambio en el d&iacute;a a d&iacute;a de tu negocio</h2>
-        <p class="section-subtitle">Compar&aacute; c&oacute;mo oper&aacute;s hoy contra c&oacute;mo funciona un sistema automatizado inteligente.</p>
+        <h2 class="section-title">Prob&aacute; la Demo en Vivo de tu Sistema Inteligente</h2>
+        <p class="section-subtitle">Ejemplo real de automatizaci&oacute;n para Consultorio m&eacute;dico / Odontol&oacute;gico o Comercio PyME.</p>
 
-        <div class="demo-container">
-          <div class="before-after-grid">
-            <div class="demo-card before">
-              <h3 style="color: var(--accent-red); margin-bottom: 14px;">&#128308; ANTES (Caos operativo)</h3>
-              <ul>
-                <li>P&eacute;rdida de ventas y turnos por no responder mensajes a tiempo o estar fuera de horario.</li>
-                <li>Ausentismo de clientes que reservan turno y se olvidan de asistir a la cita.</li>
-                <li>P&eacute;rdida de tiempo armando presupuestos a mano uno por uno en hojas o chats sueltos.</li>
-                <li>Desorganizaci&oacute;n general por no saber qu&eacute; se le cotiz&oacute; ni qu&eacute; pidi&oacute; cada cliente.</li>
-              </ul>
+        <!-- 1) Frase del ANTES -->
+        <div class="demo-phrase-box before">
+          &#128308; <strong>ANTES:</strong> "Perder pacientes o clientes por tardar horas en responder consultas en WhatsApp fuera de horario, agendar citas a mano en cuadernos y sufrir ausentismo por olvidos."
+        </div>
+
+        <!-- 2) Simulador Interactivo de WhatsApp & Turnos (HTML/CSS/JS Puro) -->
+        <div class="simulator-card">
+          <div class="simulator-header">
+            <div class="simulator-title">
+              <span>&#129302;</span>
+              <span>Simulador de Bot de WhatsApp &mdash; Consultorio / PyME</span>
             </div>
-
-            <div class="demo-card after">
-              <h3 style="color: var(--accent-green); margin-bottom: 14px;">&#128994; DESPU&Eacute;S (Ecosistema Inteligente)</h3>
-              <ul>
-                <li><strong>WhatsApp 24/7:</strong> Responde consultas, muestra cat&aacute;logo y toma pedidos/turnos siempre.</li>
-                <li><strong>Recordatorios Autom&aacute;ticos:</strong> Confirma y recuerda citas por WhatsApp para reducir ausencias.</li>
-                <li><strong>Presupuestos Express:</strong> Genera PDFs profesionales en menos de 2 minutos a partir de los datos.</li>
-                <li><strong>Ficha Hist&oacute;rica de Cliente:</strong> Registro centralizado de compras, presupuestos y contacto.</li>
-              </ul>
+            <div style="font-size: 0.82rem; color: var(--accent-green);">
+              <span class="status-dot"></span> Sistema 24/7 En L&iacute;nea
             </div>
           </div>
 
-          <!-- Mockup Visual Interactivo de WhatsApp / Demo -->
-          <div class="mockup-frame">
-            <div class="mockup-header">
-              <div class="mockup-avatar">&#129302;</div>
-              <div class="mockup-info">
-                <div class="mockup-title">Franco Zappetti &mdash; Asistente de IA comercial</div>
-                <div class="mockup-status"><span class="status-dot"></span> Respondiendo en tiempo real (24/7)</div>
+          <div class="simulator-body">
+            <!-- Formulario de Prueba -->
+            <div class="simulator-controls">
+              <h4 style="margin-bottom: 16px; font-size: 1rem; color: var(--text-highlight);">Simul&aacute; ser un cliente:</h4>
+              
+              <div class="form-group">
+                <label>Tu Nombre:</label>
+                <input type="text" id="sim-name" class="form-control" value="Carlos Rodr&iacute;guez" placeholder="Ej: Carlos Rodr&iacute;guez">
               </div>
+
+              <div class="form-group">
+                <label>Servicio / Consulta:</label>
+                <select id="sim-service" class="form-control">
+                  <option value="Consulta Diagn&oacute;stico General">Consulta Diagn&oacute;stico General</option>
+                  <option value="Presupuesto Tratamiento / Servicio">Presupuesto Tratamiento / Servicio</option>
+                  <option value="Reserva de Turno Express">Reserva de Turno Express</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Horario de Preferencia:</label>
+                <select id="sim-time" class="form-control">
+                  <option value="Ma&ntilde;ana a las 15:30 hs">Ma&ntilde;ana a las 15:30 hs</option>
+                  <option value="Jueves a las 10:00 hs">Jueves a las 10:00 hs</option>
+                  <option value="Viernes a las 17:00 hs">Viernes a las 17:00 hs</option>
+                </select>
+              </div>
+
+              <!-- Bot&oacute;n con Handler Inline Directo onclick para ejecuci&oacute;n 100% garantizada -->
+              <button type="button" id="btn-run-demo" onclick="ejecutarDemoSimulador()" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                &#9889; Probar Respuesta Autom&aacute;tica
+              </button>
             </div>
-            
-            <div class="mockup-body">
-              <div class="chat-bubble user">
-                Hola! Quisiera pedir un presupuesto para automatizar la agenda y los mensajes de mi negocio.
-              </div>
-              <div class="chat-bubble bot">
-                &iexcl;Hola! Con gusto. Registr&eacute; tus datos en tu Ficha de Cliente y gener&eacute; tu propuesta comercial personalizada en PDF en menos de 2 minutos.
-                <div class="chat-pdf-badge">&#128196; Presupuesto_Oficial_FrancoZappetti.pdf</div>
-              </div>
-              <div class="chat-bubble user">
-                &iexcl;Excelente! &iquest;Tienen disponibilidad para coordinar la reuni&oacute;n de 20 minutos?
-              </div>
-              <div class="chat-bubble bot">
-                &iexcl;Claro que s&iacute;! Te agend&eacute; el turno y te envi&eacute; la confirmaci&oacute;n autom&aacute;tica con recordatorio por WhatsApp.
+
+            <!-- Pantalla del Chat Interactiva -->
+            <div class="simulator-chat" id="chat-container">
+              <div class="chat-msg bot">
+                &iexcl;Hola! Bienvenid@ a <strong>Consultorio / Comercio Inteligente</strong>. Soy el asistente de IA 24/7 de Franco Zappetti. &iquest;En qu&eacute; puedo ayudarte hoy?
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- 3) Frase del DESPU&Eacute;S -->
+        <div class="demo-phrase-box after">
+          &#128994; <strong>DESPU&Eacute;S:</strong> "Respuestas inmediatas en 3 segundos las 24hs, turnos confirmados con recordatorio por WhatsApp y presupuestos en PDF generados en piloto autom&aacute;tico."
+        </div>
+
+        <!-- Bot&oacute;n Final de la Demo -->
+        <div style="text-align: center; margin-top: 36px;">
+          <a href="#agendar" class="btn btn-primary" style="font-size: 1.12rem; padding: 18px 36px;">
+            &iquest;Lo ves claro? Agend&aacute; 20 minutos y te armo la versi&oacute;n para tu negocio
+          </a>
         </div>
 
         <div class="objection-badge">
@@ -926,25 +944,71 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT EMBEBIDO (Acorde&oacute;n de Preguntas Frecuentes) -->
+  <!-- JAVASCRIPT EMBEBIDO (Acorde&oacute;n FAQ + Funci&oacute;n Global del Simulador) -->
   <script>
+    // 1. Acorde&oacute;n FAQ
     document.addEventListener('DOMContentLoaded', () => {
       const faqQuestions = document.querySelectorAll('.faq-question');
-
       faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
           const faqItem = question.parentElement;
-          
           document.querySelectorAll('.faq-item').forEach(item => {
-            if (item !== faqItem) {
-              item.classList.remove('active');
-            }
+            if (item !== faqItem) item.classList.remove('active');
           });
-
           faqItem.classList.toggle('active');
         });
       });
     });
+
+    // 2. Funci&oacute;n Global del Simulador (Disparada por el onclick del bot&oacute;n)
+    function ejecutarDemoSimulador() {
+      var chatContainer = document.getElementById('chat-container');
+      var inputName = document.getElementById('sim-name');
+      var selectService = document.getElementById('sim-service');
+      var selectTime = document.getElementById('sim-time');
+
+      if (!chatContainer || !inputName || !selectService || !selectTime) return;
+
+      var name = inputName.value.trim() || 'Cliente';
+      var service = selectService.value;
+      var time = selectTime.value;
+
+      // Mensaje del usuario
+      var userMsg = document.createElement('div');
+      userMsg.className = 'chat-msg user';
+      userMsg.innerHTML = 'Hola, mi nombre es <strong>' + name + '</strong>. Quisiera consultar por <strong>' + service + '</strong> para el <strong>' + time + '</strong>.';
+      chatContainer.appendChild(userMsg);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Indicador de escribiendo
+      var typingMsg = document.createElement('div');
+      typingMsg.className = 'chat-msg bot';
+      typingMsg.style.color = '#9ca3af';
+      typingMsg.id = 'demo-typing-indicator';
+      typingMsg.innerHTML = '&#129302; Asistente de IA escribiendo...';
+      chatContainer.appendChild(typingMsg);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Respuesta del bot despu&eacute;s de 1 segundo
+      setTimeout(function() {
+        var indicator = document.getElementById('demo-typing-indicator');
+        if (indicator) indicator.remove();
+
+        var botMsg = document.createElement('div');
+        botMsg.className = 'chat-msg bot';
+        botMsg.innerHTML = 
+          '&iexcl;Hola <strong>' + name + '</strong>! Registr&eacute; tu solicitud para <strong>' + service + '</strong> el <strong>' + time + '</strong>.<br><br>' +
+          '&#9989; <strong>Turno Reservado con &Eacute;xito.</strong> Te enviamos una confirmaci&oacute;n autom&aacute;tica con recordatorio por WhatsApp.<br>' +
+          '&#128196; <strong>Ficha de Cliente registrada:</strong> Se arm&oacute; tu presupuesto oficial en PDF.' +
+          '<div class="pdf-preview-box">' +
+            '&#128196; <strong>Presupuesto_Oficial_' + name.replace(/\s+/g, '_') + '.pdf</strong><br>' +
+            '<small style="color: var(--text-muted);">Generado en 1.8 segundos por la IA de Franco Zappetti</small>' +
+          '</div>';
+        
+        chatContainer.appendChild(botMsg);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }, 1000);
+    }
   </script>
 </body>
 </html>
