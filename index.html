@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franco Zappetti | Automatizaci&oacute;n &amp; IA para PyMEs</title>
+  
+  <!-- Estilos embebidos CSS -->
+  <style>
+    /* ==========================================================================
+       1. VARIABLES Y CONFIGURACI&Oacute;N BASE (Tema Oscuro Tech / Profesional)
+       ========================================================================== */
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #161e2e;
+      --bg-card-hover: #1f293d;
+      --bg-accent-subtle: rgba(59, 130, 246, 0.08);
+      
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-highlight: #ffffff;
+      
+      --brand-primary: #3b82f6;      /* Azul el&eacute;ctrico */
+      --brand-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+      --accent-green: #10b981;        /* Verde &eacute;xito */
+      --accent-red: #ef4444;          /* Rojo aviso */
+      
+      --border-color: #273549;
+      --border-accent: rgba(59, 130, 246, 0.3);
+      
+      --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-family);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       2. COMPONENTES GLOBALES Y CONTENEDORES
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--bg-accent-subtle);
+      color: var(--brand-primary);
+      border: 1px solid var(--border-accent);
+      margin-bottom: 16px;
+    }
+
+    .objection-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      margin-top: 24px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-highlight);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin-bottom: 32px;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--brand-gradient);
+      color: #ffffff;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-card-hover);
+      border-color: var(--brand-primary);
+    }
+
+    /* ==========================================================================
+       3. HEADER / NAVEGACI&Oacute;N
+       ========================================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-highlight);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--brand-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-primary);
+    }
+
+    /* ==========================================================================
+       4. SECCI&Oacute;N 1: QUI&Eacute;N SOY Y QU&Eacute; OFREZCO (HERO)
+       ========================================================================== */
+    .hero-section {
+      padding: 100px 0 80px 0;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sentences {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      text-align: left;
+      background: var(--bg-card);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-sentences p {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .hero-sentences p::before {
+      content: "&#9889;";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* ==========================================================================
+       5. SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO
+       ========================================================================== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card-target {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: border-color 0.25s;
+    }
+
+    .card-target.yes {
+      border-top: 4px solid var(--accent-green);
+    }
+
+    .card-target.no {
+      border-top: 4px solid var(--accent-red);
+    }
+
+    .target-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       6. SECCI&Oacute;N 3: DEMO (ANTES Y DESPU&Eacute;S)
+       ========================================================================== */
+    .demo-container {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .demo-card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+    }
+
+    .demo-card.before {
+      background-color: rgba(239, 68, 68, 0.04);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .demo-card.after {
+      background-color: rgba(16, 185, 129, 0.04);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    .demo-placeholder-box {
+      width: 100%;
+      height: 320px;
+      background-color: var(--bg-card);
+      border: 2px dashed var(--border-accent);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 24px;
+    }
+
+    /* ==========================================================================
+       7. SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO
+       ========================================================================== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .step-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    /* ==========================================================================
+       8. SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO
+       ========================================================================== */
+    .pricing-info-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(22, 30, 46, 1) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 24px;
+    }
+
+    /* ==========================================================================
+       9. SECCI&Oacute;N 6: PREGUNTAS FRECUENTES (FAQ)
+       ========================================================================== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      text-align: left;
+      background: none;
+      border: none;
+      color: var(--text-highlight);
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question::after {
+      content: "+";
+      font-size: 1.4rem;
+      color: var(--brand-primary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--text-muted);
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 0 24px 20px 24px;
+    }
+
+    /* ==========================================================================
+       10. SECCI&Oacute;N 7: LLAMADO A LA ACCI&Oacute;N (CTA FINAL)
+       ========================================================================== */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-main) 0%, rgba(59, 130, 246, 0.08) 100%);
+      padding: 100px 0;
+      border-bottom: none;
+    }
+
+    .cta-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 56px 32px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-glow);
+    }
+
+    /* ==========================================================================
+       11. FOOTER
+       ========================================================================== */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVE (CELULARES Y TABLETS)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.75rem;
+      }
+      .grid-2, .before-after-grid, .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .cta-card {
+        padding: 36px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Franco <span>Zappetti</span></a>
+      <ul class="nav-links">
+        <li><a href="#ofrezco">Qu&eacute; ofrezco</a></li>
+        <li><a href="#para-quien">Para qui&eacute;n</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#como-trabajo">C&oacute;mo trabajo</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+      </ul>
+      <a href="#agendar" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">Agendar 20 min</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECCI&Oacute;N 1: QUI&Eacute;N SOY Y QU&Eacute; OFREZCO -->
+    <section id="ofrezco" class="hero-section">
+      <div class="container hero-content">
+        <div class="badge">&#128640; Automatizaci&oacute;n &amp; Servicios de IA</div>
+        <h1 class="hero-title">Hac&eacute; que tu negocio venda y atienda solo, sin vivir pegado al celular.</h1>
+        
+        <div class="hero-sentences">
+          <p>Soy Franco Zappetti y armo sistemas inteligentes por WhatsApp que responden consultas, agendan turnos y env&iacute;an presupuestos en autom&aacute;tico.</p>
+          <p>Integro la tecnolog&iacute;a en tu operativa diaria para que recuperes horas libres y no se te escape ni una sola venta.</p>
+        </div>
+
+        <a href="#agendar" class="btn btn-primary">Agend&aacute; una reuni&oacute;n de 20 minutos</a>
+
+        <div>
+          <div class="objection-badge">
+            &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> La IA es humo o teor&iacute;a dif&iacute;cil de aplicar en un negocio real como el m&iacute;o.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 2: PARA QUI&Eacute;N S&Iacute; / PARA QUI&Eacute;N NO -->
+    <section id="para-quien">
+      <div class="container">
+        <h2 class="section-title">&iquest;Esta soluci&oacute;n es para tu negocio?</h2>
+        <p class="section-subtitle">Filtramos de entrada para trabajar &uacute;nicamente con negocios donde generamos un impacto inmediato.</p>
+
+        <div class="grid-2">
+          <div class="card-target yes">
+            <h3 class="target-title" style="color: var(--accent-green);">
+              <span>&#9989;</span> Para qui&eacute;n S&Iacute;
+            </h3>
+            <p>Comercios, consultorios, estudios y PyMEs con clientes activos que est&aacute;n desbordados por los mensajes y el desorden administrativo.</p>
+          </div>
+
+          <div class="card-target no">
+            <h3 class="target-title" style="color: var(--accent-red);">
+              <span>&#10060;</span> Para qui&eacute;n NO
+            </h3>
+            <p>Emprendimientos que reci&eacute;n arrancan sin ventas, o quienes buscan f&oacute;rmulas m&aacute;gicas para vender sin poner esfuerzo en su servicio.</p>
+          </div>
+        </div>
+
+        <div class="objection-badge">
+          &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> Seguro esto es solo para empresas gigantes con presupuestos enormes o no aplica a mi rubro.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 3: DEMO (ANTES Y DESPU&Eacute;S) -->
+    <section id="demo">
+      <div class="container">
+        <h2 class="section-title">El cambio en el d&iacute;a a d&iacute;a de tu negocio</h2>
+        <p class="section-subtitle">Compar&aacute; c&oacute;mo oper&aacute;s hoy contra c&oacute;mo funciona un sistema automatizado inteligente.</p>
+
+        <div class="demo-container">
+          <div class="before-after-grid">
+            <div class="demo-card before">
+              <h3 style="color: var(--accent-red); margin-bottom: 12px;">&#128308; ANTES</h3>
+              <p>Horas perdidas respondiendo lo mismo por chat, clientes que faltan a sus turnos y presupuestos armados a las apuradas.</p>
+            </div>
+
+            <div class="demo-card after">
+              <h3 style="color: var(--accent-green); margin-bottom: 12px;">&#128994; DESPU&Eacute;S</h3>
+              <p>Un sistema que atiende 24/7, recuerda las citas solo, cotiza en 2 minutos en PDF y te deja la ficha del cliente organizada.</p>
+            </div>
+          </div>
+
+          <!-- Caja placeholder de la Demo -->
+          <div class="demo-placeholder-box">
+            <div style="font-size: 2.5rem; margin-bottom: 8px;">&#127916;</div>
+            <h4 style="color: var(--text-highlight); margin-bottom: 6px;">[ Espacio reservado para Video Demo / Demostraci&oacute;n interactiva ]</h4>
+            <p style="font-size: 0.9rem;">Ac&aacute; se muestra el bot respondiendo en tiempo real y generando un presupuesto en PDF.</p>
+          </div>
+        </div>
+
+        <div class="objection-badge">
+          &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> No entiendo qu&eacute; cambia en la pr&aacute;ctica ni cu&aacute;l es el beneficio real.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO -->
+    <section id="como-trabajo">
+      <div class="container">
+        <h2 class="section-title">Tu sistema funcionando en 4 pasos simples</h2>
+        <p class="section-subtitle">Un proceso claro de 14 a 21 d&iacute;as h&aacute;biles sin interrumpir tu actividad comercial habitual.</p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h4 style="color: var(--text-highlight); margin-bottom: 8px;">Diagn&oacute;stico</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Analizamos tu flujo actual de mensajes y tareas repetitivas.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h4 style="color: var(--text-highlight); margin-bottom: 8px;">Configuraci&oacute;n</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Armamos los bots, plantillas y fichas a la medida de tu negocio.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h4 style="color: var(--text-highlight); margin-bottom: 8px;">Pruebas y Capacitaci&oacute;n</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Probamos todo juntos y capacitamos a tu equipo en 45 minutos.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h4 style="color: var(--text-highlight); margin-bottom: 8px;">Puesta en Marcha</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Lanzamos el sistema 24/7 con seguimiento de funcionamiento.</p>
+          </div>
+        </div>
+
+        <div class="objection-badge">
+          &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> Implementar esto va a ser un proceso largo y engorroso que me va a complicar m&aacute;s.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO -->
+    <section id="presupuesto">
+      <div class="container">
+        <h2 class="section-title">Una propuesta a la medida de tu operativa</h2>
+
+        <div class="pricing-info-card">
+          <p style="font-size: 1.1rem; margin-bottom: 16px;">
+            "No vendo paquetes enlatados: analizo qu&eacute; tareas necesit&aacute;s automatizar y armo una propuesta adaptada a tu volumen de trabajo."
+          </p>
+          <p style="font-size: 1.1rem; color: var(--brand-primary); font-weight: 600;">
+            "El valor exacto lo conversamos en una reuni&oacute;n 1:1 despu&eacute;s de mostrarte la demo en vivo, para que veas el sistema funcionando antes de tomar cualquier decisi&oacute;n."
+          </p>
+        </div>
+
+        <div class="objection-badge">
+          &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> Me van a querer vender algo caro que no necesito o me van a pedir plata a ciegas.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 6: PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Respuestas claras antes de dar el paso</h2>
+        <p class="section-subtitle">Despejamos tus dudas sobre la calidez en la atenci&oacute;n, el uso de tu n&uacute;mero actual de WhatsApp y la actualizaci&oacute;n de tus precios.</p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">1. &iquest;Voy a perder el contacto humano o va a sonar fr&iacute;o?</button>
+            <div class="faq-answer">
+              <p>No. La IA resuelve lo repetitivo (horarios, cat&aacute;logo, toma de datos) con un tono natural adaptado a tu marca, y deriva la conversaci&oacute;n a una persona en cuanto se detecta una consulta compleja o personalizada.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">2. &iquest;Necesito saber de computaci&oacute;n o instalar programas?</button>
+            <div class="faq-answer">
+              <p>Para nada. Te entrego una soluci&oacute;n dise&ntilde;ada para usarse directamente desde el celular o la computadora con una interfaz s&uacute;per intuitiva y simple.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">3. &iquest;Tengo que cambiar mi n&uacute;mero de WhatsApp actual?</button>
+            <div class="faq-answer">
+              <p>No. Trabajamos sobre tu misma l&iacute;nea comercial para no perder contactos ni historial.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">4. &iquest;Qu&eacute; pasa si un cliente hace una pregunta que la IA no sabe?</button>
+            <div class="faq-answer">
+              <p>El sistema lo detecta al instante, le avisa respetuosamente al cliente que un asesor lo va a atender y te notifica a vos o a tu equipo para que tomen el control del chat.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">5. &iquest;Cu&aacute;nto tiempo nos va a llevar aprender a usarlo?</button>
+            <div class="faq-answer">
+              <p>Con una capacitaci&oacute;n de 45 minutos ya quedan operando. Adem&aacute;s, te dejo manuales breves en formato video para cualquier consulta r&aacute;pida.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">6. &iquest;Qu&eacute; pasa si cambio los precios o agrego nuevos productos?</button>
+            <div class="faq-answer">
+              <p>Es muy sencillo de actualizar. Te ense&ntilde;o a modificar datos en minutos sin depender de nadie, o pod&eacute;s contar con mi soporte para hacerlo por vos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="objection-badge">
+          &#128737;&#65039; <strong>Mata objeciones:</strong> Frialdad del bot, complicaci&oacute;n t&eacute;cnica, perder l&iacute;nea actual, consultas complejas, tiempo de aprendizaje y cambios de precios futuros.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCI&Oacute;N 7: LLAMADO A LA ACCI&Oacute;N (CTA FINAL) -->
+    <section id="agendar" class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2 class="section-title" style="margin-bottom: 20px;">Recuper&aacute; el control de tu tiempo hoy mismo</h2>
+          <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 12px;">
+            "Reserv&aacute; una charla de 20 minutos donde te muestro la demo funcionando en vivo y vemos si aplica a tu negocio."
+          </p>
+          <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 32px;">
+            "Sin compromiso y sin letra chica: eleg&iacute; el d&iacute;a y el horario que mejor te queden."
+          </p>
+
+          <!-- Bot&oacute;n Principal CTA -->
+          <a href="#" onclick="alert('Ac&aacute; conect&aacute;s tu enlace de Calendly o WhatsApp'); return false;" class="btn btn-primary" style="font-size: 1.15rem; padding: 16px 36px;">
+            Agend&aacute; una reuni&oacute;n de 20 minutos
+          </a>
+
+          <div style="margin-top: 24px;">
+            <div class="objection-badge" style="background: rgba(59, 130, 246, 0.1); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">
+              &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> Tengo miedo de comprometerme o perder tiempo en una reuni&oacute;n de venta pesada.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Franco Zappetti &mdash; Automatizaci&oacute;n &amp; Soluciones de Inteligencia Artificial para PyMEs.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT EMBEBIDO (Acorde&oacute;n de Preguntas Frecuentes) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const faqItem = question.parentElement;
+          
+          document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+              item.classList.remove('active');
+            }
+          });
+
+          faqItem.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
