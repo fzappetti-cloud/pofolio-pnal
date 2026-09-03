@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Franco Zappetti | Automatizaci&oacute;n &amp; Servicios de IA para PyMEs</title>
+  <title>EcoPractIA | Soluciones Digitales &amp; Automatizaci&oacute;n</title>
   
-  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior - Pliego 1 Recuadro Personalizado) -->
+  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior + Marca EcoPractIA 3D) -->
   <style>
     /* ==========================================================================
        1. VARIABLES Y CONFIGURACI&Oacute;N BASE (Tema Oscuro Tech High-Contrast)
@@ -21,8 +21,9 @@
       --text-highlight: #ffffff;
       
       --brand-primary: #3b82f6;      /* Azul el&eacute;ctrico */
+      --brand-emerald: #10b981;      /* Verde esmeralda logo */
       --brand-accent: #6366f1;       /* Indigo glow */
-      --brand-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+      --brand-gradient: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
       
       --accent-green: #10b981;        /* Verde &eacute;xito */
       --accent-green-bg: rgba(16, 185, 129, 0.08);
@@ -30,7 +31,7 @@
       --accent-red-bg: rgba(239, 68, 68, 0.08);
       
       --border-color: #233047;
-      --border-accent: rgba(59, 130, 246, 0.35);
+      --border-accent: rgba(16, 185, 129, 0.35);
       
       --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       --radius-sm: 8px;
@@ -38,7 +39,7 @@
       --radius-lg: 24px;
       
       --shadow-card: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
-      --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+      --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
     }
 
     * {
@@ -58,8 +59,8 @@
     body {
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.06) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.06) 0%, transparent 40%);
     }
 
     /* ==========================================================================
@@ -88,7 +89,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       background: var(--bg-card);
-      color: var(--brand-primary);
+      color: var(--brand-emerald);
       border: 1px solid var(--border-accent);
       margin-bottom: 12px;
     }
@@ -161,7 +162,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.5);
     }
 
     .btn-secondary {
@@ -172,19 +173,19 @@
 
     .btn-secondary:hover {
       background-color: var(--bg-card-hover);
-      border-color: var(--brand-primary);
+      border-color: var(--brand-emerald);
       transform: translateY(-2px);
     }
 
     /* ==========================================================================
-       3. HEADER / NAVEGACI&Oacute;N
+       3. HEADER PEGAJOSO CON MARCA EcoPractIA Y TIPOGRAF&Iacute;A 3D CON SOMBRA A LA DERECHA
        ========================================================================== */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
       height: 74px;
-      background-color: rgba(9, 13, 22, 0.88);
+      background-color: rgba(9, 13, 22, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
       display: flex;
@@ -197,16 +198,53 @@
       align-items: center;
     }
 
-    .logo {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--text-highlight);
+    /* Contenedor del Logo de Marca EcoPractIA */
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       text-decoration: none;
-      letter-spacing: -0.02em;
     }
 
-    .logo span {
-      color: var(--brand-primary);
+    .brand-logo-img {
+      height: 42px;
+      width: auto;
+      border-radius: 6px;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo-container:hover .brand-logo-img {
+      transform: scale(1.05);
+    }
+
+    /* Tipograf&iacute;a 3D S&oacute;lida con Sombras en Perspectiva hacia la Derecha */
+    .logo-3d {
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      color: #e2e8f0;
+      text-transform: none;
+      display: inline-block;
+      position: relative;
+      /* Efecto 3D de sombra s&oacute;lida desplazada hacia abajo y la derecha (+X, +Y) */
+      text-shadow: 
+        1px 1px 0px #090d16,
+        2px 2px 0px #047857,
+        3px 3px 0px #059669,
+        4px 4px 0px #064e3b,
+        5px 5px 10px rgba(16, 185, 129, 0.65);
+      transition: all 0.3s ease;
+    }
+
+    /* Resaltado para la parte "IA" o "PractIA" en tono esmeralda / plata metalizada */
+    .logo-3d .logo-ia {
+      color: #10b981;
+      background: linear-gradient(180deg, #6ee7b7 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(2px 2px 0px #022c22);
     }
 
     .nav-links {
@@ -224,11 +262,11 @@
     }
 
     .nav-links a:hover {
-      color: var(--brand-primary);
+      color: var(--brand-emerald);
     }
 
     /* ==========================================================================
-       4. SECCI&Oacute;N 1 (PLIEGO 1): QUI&Eacute;N SOY Y QU&Eacute; OFREZCO (TEXTO RECUADRO PERSONALIZADO)
+       4. SECCI&Oacute;N 1 (PLIEGO 1): QUI&Eacute;N SOY Y QU&Eacute; OFREZCO
        ========================================================================== */
     .hero-section {
       padding: 45px 0 50px 0;
@@ -244,7 +282,7 @@
       right: 0;
       width: 52%;
       height: 100%;
-      background-image: url('hero-bg.jpg');
+      background-image: url('hero-bg.jpg'), url('./hero-bg.jpg'), url('images/hero-bg.jpg');
       background-size: cover;
       background-position: right top;
       background-repeat: no-repeat;
@@ -458,7 +496,7 @@
     }
 
     .form-control:focus {
-      border-color: var(--brand-primary);
+      border-color: var(--brand-emerald);
     }
 
     .simulator-chat {
@@ -532,15 +570,15 @@
     }
 
     .step-card:hover {
-      border-color: var(--brand-primary);
+      border-color: var(--brand-emerald);
       transform: translateY(-3px);
     }
 
     .step-number {
       font-size: 1.8rem;
       font-weight: 800;
-      color: var(--brand-primary);
-      opacity: 0.7;
+      color: var(--brand-emerald);
+      opacity: 0.85;
       margin-bottom: 10px;
     }
 
@@ -548,7 +586,7 @@
        8. SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO
        ========================================================================== */
     .pricing-info-card {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(19, 27, 46, 1) 100%);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(19, 27, 46, 1) 100%);
       border: 1px solid var(--border-accent);
       border-radius: var(--radius-lg);
       padding: 36px;
@@ -597,7 +635,7 @@
     .faq-question::after {
       content: "+";
       font-size: 1.4rem;
-      color: var(--brand-primary);
+      color: var(--brand-emerald);
       transition: transform 0.3s ease;
     }
 
@@ -624,7 +662,7 @@
        ========================================================================== */
     .cta-section {
       text-align: center;
-      background: linear-gradient(180deg, var(--bg-main) 0%, rgba(59, 130, 246, 0.1) 100%);
+      background: linear-gradient(180deg, var(--bg-main) 0%, rgba(16, 185, 129, 0.1) 100%);
       padding: 80px 0;
       border-bottom: none;
     }
@@ -688,10 +726,15 @@
 </head>
 <body>
 
-  <!-- HEADER PEGAJOSO (74px ALTO) -->
+  <!-- HEADER PEGAJOSO CON MARCA EcoPractIA Y DISE&Ntilde;O 3D CON SOMBRA A LA DERECHA -->
   <header>
     <div class="container nav-wrapper">
-      <a href="#" class="logo">Franco <span>Zappetti</span></a>
+      <!-- Marca EcoPractIA (Isotipo + Nombre 3D) -->
+      <a href="#" class="brand-logo-container">
+        <img src="logo.jpg" alt="EcoPractIA Logo" class="brand-logo-img">
+        <span class="logo-3d">EcoPrac<span class="logo-ia">TIA</span></span>
+      </a>
+
       <ul class="nav-links">
         <li><a href="#ofrezco">Qu&eacute; ofrezco</a></li>
         <li><a href="#para-quien">Para qui&eacute;n</a></li>
@@ -704,7 +747,7 @@
   </header>
 
   <main>
-    <!-- SECCI&Oacute;N 1 (PLIEGO 1): QUI&Eacute;N SOY Y QU&Eacute; OFREZCO (TEXTO RECUADRO PERSONALIZADO FRANCO ZAPPETTI) -->
+    <!-- SECCI&Oacute;N 1 (PLIEGO 1): QUI&Eacute;N SOY Y QU&Eacute; OFREZCO -->
     <section id="ofrezco" class="hero-section">
       <div class="hero-bg-portrait"></div>
 
@@ -718,7 +761,7 @@
           <!-- T&iacute;tulo Principal -->
           <h1 class="hero-title">Modernizo y ordeno la atenci&oacute;n y administraci&oacute;n de tu actividad para que opere con fluidez continua y recuperes tu tiempo.</h1>
           
-          <!-- Recuadro de Frases Exacto Solicitado por Franco Zappetti -->
+          <!-- Recuadro de Frases -->
           <div class="hero-sentences">
             <p><span class="inline-icon">&#128498;</span><strong>Soy Franco Zappetti</strong>, desarrollador de soluciones digitales y flujos de trabajo eficientes para la actividad comercial y profesional. Mi foco est&aacute; en simplificar tareas repetitivas para devolverte tiempo de gesti&oacute;n y previsibilidad.</p>
             <p><span class="inline-icon">&#128498;</span>Implemento herramientas a medida que centralizan la comunicaci&oacute;n, responden consultas frecuentes, gestionan turnos y formalizan presupuestos de forma r&aacute;pida, conectando la atenci&oacute;n con la administraci&oacute;n interna.</p>
@@ -828,7 +871,7 @@
 
             <div class="simulator-chat" id="chat-container">
               <div class="chat-msg bot">
-                &iexcl;Hola! Bienvenid@ a <strong>Consultorio / Comercio Inteligente</strong>. Soy el asistente de IA 24/7 de Franco Zappetti. &iquest;En qu&eacute; puedo ayudarte hoy?
+                &iexcl;Hola! Bienvenid@ a <strong>Consultorio / Comercio Inteligente</strong>. Soy el asistente de IA 24/7 de EcoPractIA. &iquest;En qu&eacute; puedo ayudarte hoy?
               </div>
             </div>
           </div>
@@ -897,7 +940,7 @@
           <p style="font-size: 1.15rem; margin-bottom: 18px; color: var(--text-highlight);">
             "No vendo paquetes enlatados: analizo qu&eacute; tareas necesit&aacute;s automatizar y armo una propuesta adaptada a tu volumen de trabajo."
           </p>
-          <p style="font-size: 1.15rem; color: var(--brand-primary); font-weight: 700;">
+          <p style="font-size: 1.15rem; color: var(--brand-emerald); font-weight: 700;">
             "El valor exacto lo conversamos en una reuni&oacute;n 1:1 despu&eacute;s de mostrarte la demo en vivo, para que veas el sistema funcionando antes de tomar cualquier decisi&oacute;n."
           </p>
         </div>
@@ -981,7 +1024,7 @@
           </a>
 
           <div style="margin-top: 28px;">
-            <div class="objection-badge" style="background: rgba(59, 130, 246, 0.1); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);">
+            <div class="objection-badge" style="background: rgba(16, 185, 129, 0.1); color: #a7f3d0; border-color: rgba(16, 185, 129, 0.3);">
               &#128737;&#65039; <strong>Mata objeci&oacute;n:</strong> Tengo miedo de comprometerme o perder tiempo en una reuni&oacute;n de venta pesada.
             </div>
           </div>
@@ -990,10 +1033,10 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER CON MARCA EcoPractIA -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Franco Zappetti &mdash; Automatizaci&oacute;n &amp; Soluciones de Inteligencia Artificial para PyMEs.</p>
+      <p>&copy; 2026 EcoPractIA &mdash; Soluciones Digitales &amp; Automatizaci&oacute;n para la Actividad Comercial y Profesional por Franco Zappetti.</p>
     </div>
   </footer>
 
@@ -1034,7 +1077,7 @@
       typingMsg.className = 'chat-msg bot';
       typingMsg.style.color = '#9ca3af';
       typingMsg.id = 'demo-typing-indicator';
-      typingMsg.innerHTML = '&#129302; Asistente de IA escribiendo...';
+      typingMsg.innerHTML = '&#129302; Asistente de EcoPractIA escribiendo...';
       chatContainer.appendChild(typingMsg);
       chatContainer.scrollTop = chatContainer.scrollHeight;
 
@@ -1050,7 +1093,7 @@
           '&#128196; <strong>Ficha de Cliente registrada:</strong> Se arm&oacute; tu presupuesto oficial en PDF.' +
           '<div class="pdf-preview-box">' +
             '&#128196; <strong>Presupuesto_Oficial_' + name.replace(/\s+/g, '_') + '.pdf</strong><br>' +
-            '<small style="color: var(--text-muted);">Generado en 1.8 segundos por la IA de Franco Zappetti</small>' +
+            '<small style="color: var(--text-muted);">Generado en 1.8 segundos por la plataforma de EcoPractIA</small>' +
           '</div>';
         
         chatContainer.appendChild(botMsg);
