@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoPractIA | Soluciones Digitales &amp; Automatizaci&oacute;n</title>
   
-  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior + Secci&oacute;n C&oacute;mo Trabajo 6 Pasos) -->
+  <!-- Estilos embebidos CSS (Dise&ntilde;o Premium Senior + Secci&oacute;n Presupuesto 8 L&iacute;neas) -->
   <style>
     /* ==========================================================================
        1. VARIABLES Y CONFIGURACI&Oacute;N BASE (Tema Oscuro Tech High-Contrast)
@@ -546,7 +546,7 @@
     }
 
     /* ==========================================================================
-       7. SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO (GRID DE 6 PASOS EN ORDEN SECUENCIAL)
+       7. SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO
        ========================================================================== */
     .steps-grid {
       display: grid;
@@ -597,15 +597,47 @@
     }
 
     /* ==========================================================================
-       8. SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO
+       8. SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO (8 L&Iacute;NEAS SIN PRECIOS)
        ========================================================================== */
     .pricing-info-card {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(19, 27, 46, 1) 100%);
       border: 1px solid var(--border-accent);
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 36px 32px;
       margin-top: 20px;
       box-shadow: var(--shadow-card);
+    }
+
+    .presupuesto-lines-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 10px 0 24px 0;
+    }
+
+    .presupuesto-lines-list li {
+      font-size: 1.02rem;
+      color: var(--text-main);
+      line-height: 1.52;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .step-num-pill {
+      background: var(--brand-emerald);
+      color: #090d16;
+      font-weight: 800;
+      font-size: 0.85rem;
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* ==========================================================================
@@ -756,9 +788,10 @@
         <li><a href="#para-quien">Para qui&eacute;n</a></li>
         <li><a href="#demo">Demo Interactiva</a></li>
         <li><a href="#como-trabajo">C&oacute;mo trabajo</a></li>
+        <li><a href="#presupuesto">Presupuesto</a></li>
         <li><a href="#faq">Preguntas</a></li>
       </ul>
-      <a href="#agendar" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.92rem;">Agendar 20 min</a>
+      <a href="https://wa.me/5493517548151?text=Hola%20Franco,%20vi%20la%20demo%20en%20tu%20web%20y%20quiero%20agendar%20la%20reuni%C3%B3n%20de%2020%20minutos" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.92rem;">Agend&aacute; 20 min</a>
     </div>
   </header>
 
@@ -781,7 +814,7 @@
             <p><span class="inline-icon">&#128498;</span>Implemento herramientas a medida que centralizan la comunicaci&oacute;n, responden consultas frecuentes, gestionan turnos y formalizan presupuestos de forma r&aacute;pida, conectando la atenci&oacute;n con la administraci&oacute;n interna.</p>
           </div>
 
-          <a href="#agendar" class="btn btn-primary">Agend&aacute; una reuni&oacute;n de 20 minutos</a>
+          <a href="https://wa.me/5493517548151?text=Hola%20Franco,%20vi%20la%20demo%20en%20tu%20web%20y%20quiero%20agendar%20la%20reuni%C3%B3n%20de%2020%20minutos" target="_blank" class="btn btn-primary">Agend&aacute; la reuni&oacute;n de 20 minutos</a>
 
           <div>
             <div class="objection-badge">
@@ -896,8 +929,8 @@
         </div>
 
         <div style="text-align: center; margin-top: 24px;">
-          <a href="#agendar" class="btn btn-primary" style="font-size: 1.05rem; padding: 16px 32px;">
-            &iquest;Lo ves claro? Agend&aacute; 20 minutos y te armo la versi&oacute;n para tu negocio
+          <a href="https://wa.me/5493517548151?text=Hola%20Franco,%20vi%20la%20demo%20en%20tu%20web%20y%20quiero%20agendar%20la%20reuni%C3%B3n%20de%2020%20minutos" target="_blank" class="btn btn-primary" style="font-size: 1.05rem; padding: 16px 32px;">
+            Agend&aacute; la reuni&oacute;n de 20 minutos
           </a>
         </div>
 
@@ -907,49 +940,43 @@
       </div>
     </section>
 
-    <!-- SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO (6 PASOS ORDENADOS Y TRANSPARENTES) -->
+    <!-- SECCI&Oacute;N 4: C&Oacute;MO TRABAJO, PASO A PASO -->
     <section id="como-trabajo">
       <div class="container">
         <h2 class="section-title">C&oacute;mo trabajo, paso a paso</h2>
         <p class="section-subtitle">Un proceso claro, directo y estructurado para que veas el valor real del sistema antes de tomar cualquier decisi&oacute;n.</p>
 
         <div class="steps-grid">
-          <!-- Paso 1 -->
           <div class="step-card">
             <div class="step-number">01</div>
             <h3 class="step-title">Prob&aacute;s la Demo en Vivo</h3>
             <p class="step-desc">Explor&aacute;s el simulador interactivo en esta misma p&aacute;gina para entender en la pr&aacute;ctica c&oacute;mo responde el bot, agend&aacute;s citas y gener&aacute;s presupuestos 24/7.</p>
           </div>
 
-          <!-- Paso 2 -->
           <div class="step-card">
             <div class="step-number">02</div>
             <h3 class="step-title">Agend&aacute;s tu Charla de 20 Minutos</h3>
             <p class="step-desc">Si te interesa lo que viste, reserv&aacute;s un espacio en mi agenda en el d&iacute;a y horario que mejor te queden, de forma s&uacute;per simple y sin compromisos.</p>
           </div>
 
-          <!-- Paso 3 -->
           <div class="step-card">
             <div class="step-number">03</div>
             <h3 class="step-title">Reuni&oacute;n 1:1 y Propuesta de Inversi&oacute;n</h3>
             <p class="step-desc">Reci&eacute;n en este encuentro 1:1 conversamos sobre tu operativa diaria, analizamos qu&eacute; tareas conviene automatizar y te presento la propuesta de inversi&oacute;n a tu medida.</p>
           </div>
 
-          <!-- Paso 4 -->
           <div class="step-card">
             <div class="step-number">04</div>
             <h3 class="step-title">Relevamiento de tu Informaci&oacute;n</h3>
             <p class="step-desc">Me compart&iacute;s tus preguntas frecuentes, lista de precios/servicios y accesos a tu WhatsApp comercial para entrenar y configurar el sistema seg&uacute;n tu negocio.</p>
           </div>
 
-          <!-- Paso 5 -->
           <div class="step-card">
             <div class="step-number">05</div>
             <h3 class="step-title">Configuraci&oacute;n y Capacitaci&oacute;n R&aacute;pida</h3>
             <p class="step-desc">Desarrollo e integro el sistema completo. Hacemos pruebas juntos y capacito a tu equipo en solo 45 minutos para que operen con total autonom&iacute;a.</p>
           </div>
 
-          <!-- Paso 6 -->
           <div class="step-card">
             <div class="step-number">06</div>
             <h3 class="step-title">Puesta en Marcha y Acompa&ntilde;amiento</h3>
@@ -963,18 +990,29 @@
       </div>
     </section>
 
-    <!-- SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO -->
+    <!-- SECCI&Oacute;N 5: C&Oacute;MO ARMO UN PRESUPUESTO (REEMPLAZADO CON 8 L&Iacute;NEAS Y SIN PRECIOS) -->
     <section id="presupuesto">
       <div class="container">
         <h2 class="section-title">Una propuesta a la medida de tu operativa</h2>
+        <p class="section-subtitle">Transparencia total: el valor de la inversi&oacute;n se define en base a las necesidades reales de tu negocio.</p>
 
         <div class="pricing-info-card">
-          <p style="font-size: 1.15rem; margin-bottom: 18px; color: var(--text-highlight);">
-            "No vendo paquetes enlatados: analizo qu&eacute; tareas necesit&aacute;s automatizar y armo una propuesta adaptada a tu volumen de trabajo."
-          </p>
-          <p style="font-size: 1.15rem; color: var(--brand-emerald); font-weight: 700;">
-            "El valor exacto lo conversamos en una reuni&oacute;n 1:1 despu&eacute;s de mostrarte la demo en vivo, para que veas el sistema funcionando antes de tomar cualquier decisi&oacute;n."
-          </p>
+          <ul class="presupuesto-lines-list">
+            <li><span class="step-num-pill">1</span><span>No vendo paquetes enlatados ni cobro precios a ciegas sin conocer la realidad de tu negocio.</span></li>
+            <li><span class="step-num-pill">2</span><span>Cada actividad comercial tiene su propio flujo, volumen de consultas y complejidad operativa.</span></li>
+            <li><span class="step-num-pill">3</span><span>Primero prob&aacute;s la demo interactiva en vivo para ver exactamente c&oacute;mo responde el sistema.</span></li>
+            <li><span class="step-num-pill">4</span><span>En nuestra reuni&oacute;n 1:1 analizamos tus tareas repetitivas y cuellos de botella del d&iacute;a a d&iacute;a.</span></li>
+            <li><span class="step-num-pill">5</span><span>Evaluamos qu&eacute; m&oacute;dulos espec&iacute;ficos te generan un impacto directo en tiempo y organizaci&oacute;n.</span></li>
+            <li><span class="step-num-pill">6</span><span>Con esa informaci&oacute;n clara y real, te armo una propuesta de inversi&oacute;n adaptada a tu escala.</span></li>
+            <li><span class="step-num-pill">7</span><span>Pag&aacute;s exclusivamente por la soluci&oacute;n que necesit&aacute;s implementar, sin sorpresas ni costos ocultos.</span></li>
+            <li><span class="step-num-pill">8</span><span>Agend&aacute; tus 20 minutos de charla estrat&eacute;gica y dise&ntilde;emos el sistema a la medida de tu operativa.</span></li>
+          </ul>
+
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="https://wa.me/5493517548151?text=Hola%20Franco,%20vi%20la%20demo%20en%20tu%20web%20y%20quiero%20agendar%20la%20reuni%C3%B3n%20de%2020%20minutos" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px;">
+              Agend&aacute; la reuni&oacute;n de 20 minutos
+            </a>
+          </div>
         </div>
 
         <div class="objection-badge">
@@ -1051,8 +1089,8 @@
             "Sin compromiso y sin letra chica: eleg&iacute; el d&iacute;a y el horario que mejor te queden."
           </p>
 
-          <a href="#" onclick="alert('Ac&aacute; conect&aacute;s tu enlace de Calendly o WhatsApp'); return false;" class="btn btn-primary" style="font-size: 1.15rem; padding: 18px 40px;">
-            Agend&aacute; una reuni&oacute;n de 20 minutos
+          <a href="https://wa.me/5493517548151?text=Hola%20Franco,%20vi%20la%20demo%20en%20tu%20web%20y%20quiero%20agendar%20la%20reuni%C3%B3n%20de%2020%20minutos" target="_blank" class="btn btn-primary" style="font-size: 1.15rem; padding: 18px 40px;">
+            Agend&aacute; la reuni&oacute;n de 20 minutos
           </a>
 
           <div style="margin-top: 28px;">
